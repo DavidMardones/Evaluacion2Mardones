@@ -88,6 +88,7 @@ namespace Evaluacion2Mardones
             {
                 Console.WriteLine(mensaje);
             }
+            Console.WriteLine("");
         }
     }
 }
