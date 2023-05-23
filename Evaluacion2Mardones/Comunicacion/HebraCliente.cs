@@ -21,8 +21,6 @@ namespace Evaluacion2Mardones.Comunicacion
 
         public void ejecutar()
         {
-            clienteCom.Escribir("Bienvenido al lector");
-            string saludo = clienteCom.Leer();
             clienteCom.Escribir("Ingrese el numero de medidor: ");
             int nroMedidor = Convert.ToInt32(clienteCom.Leer());
             clienteCom.Escribir("Ingrese la fecha(AAAA-MM-DD HH-MM-SS): ");

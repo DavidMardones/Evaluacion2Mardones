@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Evaluacion2Model.DTO;
 
 namespace Medidor.Comunicacion
 {
@@ -65,6 +66,30 @@ namespace Medidor.Comunicacion
 
             }
         }
+        public void Escribir(int nroMedidor)
+        {
+            try
+            {
+                this.writer.WriteLine(nroMedidor);
+                this.writer.Flush();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public void Escribir(decimal valorConsumo)
+        {
+            try
+            {
+                this.writer.WriteLine(valorConsumo);
+                this.writer.Flush();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         public void Desconectar()
         {
             try
@@ -77,10 +102,8 @@ namespace Medidor.Comunicacion
             }
         }
 
-        internal object Escribir(int nroMedidor)
-        {
-            throw new NotImplementedException();
-        }
+       
+        
     }
 }
 

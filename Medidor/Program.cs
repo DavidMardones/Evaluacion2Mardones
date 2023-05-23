@@ -19,21 +19,23 @@ namespace Medidor
             MedidorSocket medidorSocket = new MedidorSocket(servidor, puerto);
             if (medidorSocket.Conectar())
             {
-                Console.WriteLine("Conectado...");
+                Console.WriteLine("Bienvenido!");
                 string mensaje = medidorSocket.Leer();
-                Console.WriteLine("M: {0}", mensaje);
+                Console.WriteLine("S: {0}", mensaje);
+                int nroMedidor = Convert.ToInt32(Console.ReadLine().Trim());
+                medidorSocket.Escribir(nroMedidor);
+                mensaje = medidorSocket.Leer();
+                Console.WriteLine("S: {0}", mensaje);
+                string fecha = Console.ReadLine().Trim();
+                medidorSocket.Escribir(fecha);
+                mensaje = medidorSocket.Leer();
+                Console.WriteLine("S: {0}", mensaje);
+                decimal valorConsumo = Convert.ToDecimal(Console.ReadLine().Trim());
+                medidorSocket.Escribir(valorConsumo);
+                mensaje = medidorSocket.Leer();
+                Console.WriteLine("S: Gracias");
+                medidorSocket.Desconectar();
 
-                    string nombre = Console.ReadLine().Trim();
-                    medidorSocket.Escribir(nombre);
-                    mensaje = medidorSocket.Leer();
-                    Console.WriteLine("M: {0}", mensaje);
-                    if (mensaje == "Chao")
-                    {
-                        medidorSocket.Desconectar();
-                        Console.WriteLine("Desconectado");
-                    }
-
-                
             }
             else
             {
