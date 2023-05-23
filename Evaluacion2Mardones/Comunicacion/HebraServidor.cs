@@ -25,9 +25,9 @@ namespace Evaluacion2Mardones.Comunicacion
                 {
                     Console.WriteLine("S: Esperando medidor...");
                     Socket cliente = servidor.ObtenerCliente();
-                    Console.WriteLine("S: Medidor recibido");
+                    Console.WriteLine("S: Medidor recibido");   
                     ClienteCom clienteCom = new ClienteCom(cliente);
-
+                    Console.WriteLine("");
                     HebraCliente clienteThread = new HebraCliente(clienteCom);
                     Thread t = new Thread(new ThreadStart(clienteThread.ejecutar));
                     t.IsBackground = true;

@@ -12,14 +12,22 @@ namespace Evaluacion2Mardones
 {
     public class Program
     {
+        static void IniciarServidor()
+        {
+
+
+        }
         private static IMensajesDAL mensajesDAL = MensajesDALArchivos.GetInstancia();
 
         static bool Menu()
         {
             bool continuar = true;
-            Console.WriteLine("Bienvenido al sistema de medidor electrico");
-            Console.WriteLine("Elija una opcion");
+            Console.WriteLine("Sistema de medidor electrico");
+            Console.WriteLine("");
+            Console.WriteLine("Elija una opcion: ");
+            Console.WriteLine("");
             Console.WriteLine(" 1. Ingresar un medidor \n 2. Mostrar medidores registrados \n 0. Salir");
+            Console.WriteLine("");
             switch (Console.ReadLine().Trim())
             {
                 case "1":
@@ -30,6 +38,7 @@ namespace Evaluacion2Mardones
                     break;
                 case "0":
                     continuar = false;
+                    Console.WriteLine("Conexion cerrada");
                     break;
                 default:
                     Console.WriteLine("Ingrese de nuevo");
@@ -38,11 +47,6 @@ namespace Evaluacion2Mardones
             return continuar;
         }
 
-        static void IniciarServidor()
-        {
-
-
-        }
         static void Main(string[] args)
         {
 
@@ -74,6 +78,7 @@ namespace Evaluacion2Mardones
 
         static void Mostrar()
         {
+            Console.WriteLine("");
             List<Mensaje> lecturas = null;
             lock (mensajesDAL)
             {
