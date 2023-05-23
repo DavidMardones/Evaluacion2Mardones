@@ -17,8 +17,9 @@ namespace Evaluacion2Mardones
         static bool Menu()
         {
             bool continuar = true;
-            Console.WriteLine("Selecciones una opcion");
-            Console.WriteLine(" 1. Ingresar \n 2. Mostrar \n 0. Salir");
+            Console.WriteLine("Bienvenido al sistema de medidor electrico");
+            Console.WriteLine("Elija una opcion");
+            Console.WriteLine(" 1. Ingresar un medidor \n 2. Mostrar medidores registrados \n 0. Salir");
             switch (Console.ReadLine().Trim())
             {
                 case "1":
