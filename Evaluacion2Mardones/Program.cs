@@ -55,8 +55,8 @@ namespace Evaluacion2Mardones
         {
             Console.WriteLine("Ingrese numero de medidor: ");
             int nroMedidor = Convert.ToInt32(Console.ReadLine().Trim());
-            Console.WriteLine("Ingrese la fecha(AAAA-MM-DD): ");
-            string fecha = Console.ReadLine().Trim();
+            Console.WriteLine("Ingrese la fecha(AAAA-MM-DD HH-MM-SS): ");
+            DateTime fecha = Convert.ToDateTime(Console.ReadLine().Trim());
             Console.WriteLine("Ingrese el valor de consumo(kw/h): ");
             decimal valorConsumo = Convert.ToDecimal(Console.ReadLine().Trim());
             Mensaje mensaje = new Mensaje()

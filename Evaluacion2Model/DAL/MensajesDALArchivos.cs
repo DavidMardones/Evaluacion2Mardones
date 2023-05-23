@@ -58,7 +58,7 @@ namespace Evaluacion2Model.DAL
                             Mensaje mensaje = new Mensaje()
                             {
                                 NroMedidor = Convert.ToInt32(arr[0]),
-                                Fecha = arr[1],
+                                Fecha = Convert.ToDateTime(arr[1]),
                                 ValorConsumo = Convert.ToDecimal(arr[2])
                             };
                             lista.Add(mensaje);
